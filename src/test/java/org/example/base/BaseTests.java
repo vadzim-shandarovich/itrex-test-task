@@ -7,6 +7,7 @@ import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import org.example.pages.DemosPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -26,6 +27,7 @@ public class BaseTests {
     protected ExtentReports report;
     protected ExtentSparkReporter sparkReporter;
     protected ExtentTest test;
+    protected DemosPage demosPage;
     private WebDriver driver;
 
     @BeforeTest
@@ -43,7 +45,7 @@ public class BaseTests {
         driver.manage().window().maximize();
         driver.get(BASE_URI);
 
-        //homePage = new HomePage(driver);
+        demosPage = new DemosPage(driver);
         initializeReport();
     }
 
