@@ -16,7 +16,7 @@ public class DemosTests extends BaseTests {
     @Test(description = "Verifies left menu bar contains necessary sections")
     public void verifyLeftMenuBarSections() {
         Set<String> expectedSections = new HashSet<> (
-                List.of("Interactions", "Widget", "Effects", "Utilities"));
+                List.of("Interactions", "Widgets", "Effects", "Utilities"));
         Set<String> actualSections = demosPage.getWidgetTitlesNames();
 
         test = report.createTest("Left menu bar verification",
