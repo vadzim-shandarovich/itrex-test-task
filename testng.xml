@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test Suite" parallel="tests">
+    <test preserve-order="true" name="Come up with name later" enabled="true">
+        <classes>
+            <class name="org.example.base.BaseTests"/>
+        </classes>
+    </test>
+</suite>
