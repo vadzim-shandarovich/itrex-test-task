@@ -3,7 +3,13 @@
 <suite name="Test Suite">
     <test preserve-order="true" name="Test" enabled="true">
         <classes>
-            <class name="org.example.tests.Tests"/>
+            <class name="org.example.tests.Tests">
+                <methods>
+                    <include name="verifyLeftMenuBarSections"/>
+                    <include name="verifyPopupContainsEnteredValue"/>
+                    <include name="verifyTagFieldValueAsp"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

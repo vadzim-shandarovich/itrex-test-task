@@ -10,6 +10,7 @@
     <properties>
         <testng.version>7.4.0</testng.version>
         <selenium-chrome.version>3.141.59</selenium-chrome.version>
+        <selenium-support.version>3.141.59</selenium-support.version>
         <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
         <extentreports.version>5.0.8</extentreports.version>
         <maven.compiler.source>15</maven.compiler.source>
@@ -50,6 +51,12 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-chrome-driver</artifactId>
             <version>${selenium-chrome.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-support -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-support</artifactId>
+            <version>${selenium-support.version}</version>
         </dependency>
     </dependencies>
 </project>

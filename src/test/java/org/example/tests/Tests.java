@@ -2,7 +2,9 @@ package org.example.tests;
 
 import com.aventstack.extentreports.Status;
 import org.example.base.BaseTests;
+import org.example.pages.AutocompletePage;
 import org.example.pages.SpinnerPage;
+import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
 import java.util.HashSet;
 import java.util.List;
@@ -48,6 +50,33 @@ public class Tests extends BaseTests {
         test.log(Status.INFO, "Actual value: " + actualValue);
 
         assertEquals(actualValue, ENTERED_VALUE,
-                "Actual value do not correspond to entered sections");
+                "Actual value does not correspond to entered sections");
+    }
+
+    @Test(description = "Verifies that Tags field value is Asp")
+    public void verifyTagFieldValueAsp() {
+        final String EXP_FIELD_VALUE = "Asp";
+        final String INPUT_VALUE = "a";
+        final int AUTOCOMPLETE_INDEX = 3;
+        String actualValue;
+
+        test = report.createTest("Autocomplete tag field verification",
+                "Verifies that Tags field value is Asp");
+
+        AutocompletePage autocompletePage = demosPage.clickAutocompleteLink();
+        test.log(Status.INFO, "Navigated to Autocomplete URL");
+
+        autocompletePage.enterTagsTextBoxValue(INPUT_VALUE);
+        test.log(Status.INFO, "Value '" + INPUT_VALUE + "' was entered to the text box");
+
+        autocompletePage.sendArrowDownTagsTextBox(AUTOCOMPLETE_INDEX);
+        test.log(Status.INFO, AUTOCOMPLETE_INDEX + " autocomplete element was chosen");
+
+        autocompletePage.sendKeyToTagsTextBox(Keys.ENTER);
+        actualValue = autocompletePage.getTagsTextBoxValue();
+        test.log(Status.INFO, "Actual value: " + actualValue);
+
+        assertEquals(actualValue, EXP_FIELD_VALUE,
+                "Actual value does not correspond to expected autocomplete valued");
     }
 }
