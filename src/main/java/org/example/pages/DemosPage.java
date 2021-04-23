@@ -13,6 +13,7 @@ public class DemosPage {
     private WebDriver driver;
     private By widgetTitles = By.cssSelector(".widget-title");
     private By spinnerLink = By.linkText("Spinner");
+    private By autocompleteLink = By.linkText("Autocomplete");
 
     public DemosPage(WebDriver driver) {
         this.driver = driver;
@@ -21,6 +22,11 @@ public class DemosPage {
     public SpinnerPage clickSpinnerLink() {
         driver.findElement(spinnerLink).click();
         return new SpinnerPage(driver);
+    }
+
+    public AutocompletePage clickAutocompleteLink() {
+        driver.findElement(autocompleteLink).click();
+        return new AutocompletePage(driver);
     }
 
     public Set<String> getWidgetTitlesNames() {

@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
  */
 public class SpinnerPage {
     private WebDriver driver;
-    private By selectTextBox = By.cssSelector("input#spinner");
+    private By selectTextBox = By.id("spinner");
     private By getValueButton = By.id("getvalue");
     private By demoFrame = By.className("demo-frame");
 

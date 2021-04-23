@@ -13,7 +13,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Sets up project base settings and implements before/after tests annotations
@@ -39,12 +38,10 @@ public class BaseTests {
 
         driver = new ChromeDriver(chromeOptions);
 
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get(BASE_URI);
 
         demosPage = new DemosPage(driver);
-
         initializeReport();
     }
 
