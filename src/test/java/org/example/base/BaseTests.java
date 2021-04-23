@@ -12,9 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -30,7 +28,7 @@ public class BaseTests {
     protected DemosPage demosPage;
     private WebDriver driver;
 
-    @BeforeTest
+    @BeforeClass
     public void setup() {
         System.setProperty("webdriver.chrome.driver", CHROME_DRIVER_PATH);
 
@@ -46,6 +44,7 @@ public class BaseTests {
         driver.get(BASE_URI);
 
         demosPage = new DemosPage(driver);
+
         initializeReport();
     }
 
@@ -59,6 +58,11 @@ public class BaseTests {
         sparkReporter.config().setReportName("Test task report");
         sparkReporter.config().setTheme(Theme.STANDARD);
         sparkReporter.config().setTimeStampFormat("EEEE, dd MMMM, yyyy, hh:mm a '('zzz')'");
+    }
+
+    @BeforeMethod
+    public void goToDemosPage() {
+        driver.navigate().to(BASE_URI);
     }
 
     @AfterMethod
@@ -79,9 +83,13 @@ public class BaseTests {
         }
     }
 
-    @AfterTest
+    @AfterClass
     public void tearDown() {
         driver.quit();
+    }
+
+    @AfterSuite
+    public void GenerateReport() {
         report.flush();
     }
 }

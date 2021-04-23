@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Test Suite">
-    <test preserve-order="true" name="Test task" enabled="true">
+    <test preserve-order="true" name="Test" enabled="true">
         <classes>
-            <class name="org.example.demos.DemosTests"/>
+            <class name="org.example.tests.Tests"/>
         </classes>
     </test>
 </suite>
