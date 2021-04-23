@@ -70,7 +70,7 @@ public class Tests extends BaseTests {
         test.log(Status.INFO, "Value '" + INPUT_VALUE + "' was entered to the text box");
 
         autocompletePage.sendArrowDownTagsTextBox(AUTOCOMPLETE_INDEX);
-        test.log(Status.INFO, AUTOCOMPLETE_INDEX + " autocomplete element was chosen");
+        test.log(Status.INFO, "The " + AUTOCOMPLETE_INDEX + " autocomplete element was chosen");
 
         autocompletePage.sendKeyToTagsTextBox(Keys.ENTER);
         actualValue = autocompletePage.getTagsTextBoxValue();
